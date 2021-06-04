@@ -1,0 +1,41 @@
+import java.awt.*;
+import javax.swing.*;
+
+class Runnable1 implements Runnable{
+	JLabel la;
+	public Runnable1(JLabel la) {
+		this.la = la;
+	}
+	public void run() {
+		int n = 0;
+		la.setText(Integer.toString(n));
+		try {
+			Thread.sleep(1000);
+		}
+		catch(InterruptedException e) {}
+	}
+	
+}
+public class RunnableEx extends JFrame{
+	RunnableEx(){
+		setTitle("Runnable Timer");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		Container c = getContentPane();
+		c.setLayout(new FlowLayout());
+		
+		JLabel la = new JLabel();
+		c.add(la);
+		
+		Runnable1 run = new Runnable1(la);
+		Thread th = new Thread(run);
+		
+		setVisible(true);
+		setSize(300,300);
+		
+		th.start();
+	}
+	
+	public static void main(String[] args) {
+		new RunnableEx();
+	}
+}

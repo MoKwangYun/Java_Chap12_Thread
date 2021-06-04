@@ -1,0 +1,18 @@
+
+public class Exercise {
+	public static void main(String[] agrs) {
+		 // First: "A"부터 "z"까지 100번 print 
+		for(int i=0; i<100; i++) {
+		 for(char ch='A'; ch<='z'; ch++) {
+		 System.out.print(ch);
+		 }
+		 System.out.println();
+		 }
+		 //Second: 1부터 1000까지 10개씩 print
+		 for(int i=1; i<1000; i++) {
+		 System.out.print(i);
+		 if(i%10 == 0) System.out.println();
+		 else System.out.print("\t");
+		 }
+		 }
+}
